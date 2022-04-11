@@ -37,11 +37,14 @@ ul {
 li {
   list-style: none;
 }
+.weather-description {
+  text-transform: capitalize;
+}
 .units {
   position: relative;
   top: -17px;
 }
-.temperature {
+.temp {
   font-size: 40px;
   font-weight: 500;
 }

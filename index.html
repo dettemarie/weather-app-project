@@ -24,10 +24,10 @@
     <div class="container">
       <div class="weather-app">
         <div class="weather-display">
-          <h1>New York</h1>
+          <h1 id="city-name">New York</h1>
           <ul>
             <li>Sunday 20:00</li>
-            <li>Clear</li>
+            <li class="weather-description" id="description">Clear</li>
           </ul>
           <div class="row">
             <div class="col-8">
@@ -36,14 +36,13 @@
                 alt="cloudy"
                 class="current-temp-icon"
               />
-              <span class="temperature">70</span>
-              <span class="units">°F | °C</span>
+              <span class="temp" id="temperature">70</span>
+              <span class="units">°C | <a href="#">°F</a> </span>
             </div>
             <div class="col-4" id="">
               <ul>
-                <li>Precipitaion: 5%</li>
-                <li>Humidity: 60 %</li>
-                <li>Wind: 6 km/h</li>
+                <li>Humidity: <span id="humidity">60</span>%</li>
+                <li>Wind: <span id="wind-speed">6</span>km/h</li>
               </ul>
             </div>
           </div>
