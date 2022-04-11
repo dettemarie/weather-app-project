@@ -37,7 +37,9 @@ ul {
 li {
   list-style: none;
 }
-.current-temp-icon {
+.units {
+  position: relative;
+  top: -17px;
 }
 .temperature {
   font-size: 40px;
