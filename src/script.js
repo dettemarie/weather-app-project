@@ -23,9 +23,8 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
   console.log(response.data);
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemp = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
@@ -57,5 +56,24 @@ function handleSubmit(event) {
   let city = document.querySelector("#search-city").value;
   search(city);
 }
+
+function displayFarenheitTemp(event) {
+  event.preventDefault();
+  let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  document.querySelector("#temperature").innerHTML = Math.round(farenheitTemp);
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
+}
+let celsiusTemp = null;
+
 let currentCity = document.querySelector("#city-form");
 currentCity.addEventListener("submit", handleSubmit);
+
+let farenheit = document.querySelector("#farenheit");
+farenheit.addEventListener("click", displayFarenheitTemp);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", displayCelsiusTemp);
