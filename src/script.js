@@ -67,11 +67,13 @@ function displayCelsiusTemp(event) {
   event.preventDefault();
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
 }
+
 let celsiusTemp = null;
 
 let currentCity = document.querySelector("#city-form");
 currentCity.addEventListener("submit", handleSubmit);
 
+search("New York");
 let farenheit = document.querySelector("#farenheit");
 farenheit.addEventListener("click", displayFarenheitTemp);
 
