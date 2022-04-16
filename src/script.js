@@ -73,7 +73,7 @@ let celsiusTemp = null;
 let currentCity = document.querySelector("#city-form");
 currentCity.addEventListener("submit", handleSubmit);
 
-search("New York");
+search("Houston");
 let farenheit = document.querySelector("#farenheit");
 farenheit.addEventListener("click", displayFarenheitTemp);
 

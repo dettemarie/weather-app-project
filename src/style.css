@@ -1,11 +1,27 @@
 body {
   font-family: "Ubuntu", sans-serif;
 }
-
+h1 {
+  margin-bottom: 0px;
+  padding-top: 15px;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  list-style: none;
+}
+li::first-letter {
+  text-transform: capitalize;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
 .container {
   margin-top: 60px;
 }
-
 .weather-app {
   max-width: 609px;
   margin: auto;
@@ -31,20 +47,7 @@ body {
     rgb(255, 237, 216) 90%
   );
 }
-h1 {
-  margin-bottom: 0px;
-  padding-top: 15px;
-}
-ul {
-  margin: 0px;
-  padding: 0px;
-}
-li {
-  list-style: none;
-}
-li::first-letter {
-  text-transform: capitalize;
-}
+
 .weather-description {
   text-transform: capitalize;
 }
