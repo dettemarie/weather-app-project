@@ -43,6 +43,36 @@ function displayTemperature(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+  getForecast(response.data.coord);
+}
+
+function getForecast(coordinates) {
+  let apiKey = "8c44a83622eddf5500fe2285946c1857";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+}
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2">
+                <div class = "weather-forecast-day">${day}</div>
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+                      alt="cloudy"
+                      width="40px"
+                    />
+                 <div class = "forecast-temperatures">
+                  <span class = "min-temp">10°</span> | <span class = "max-temp">42°</span> 
+                </div>
+              </div>
+            `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function search(city) {
@@ -73,9 +103,10 @@ let celsiusTemp = null;
 let currentCity = document.querySelector("#city-form");
 currentCity.addEventListener("submit", handleSubmit);
 
-search("Houston");
 let farenheit = document.querySelector("#farenheit");
 farenheit.addEventListener("click", displayFarenheitTemp);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", displayCelsiusTemp);
+search("Houston");
+displayForecast();
