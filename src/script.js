@@ -104,12 +104,6 @@ function handleSubmit(event) {
   search(city);
 }
 
-function displayFarenheitTemp(event) {
-  event.preventDefault();
-  let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  document.querySelector("#temperature").innerHTML = Math.round(farenheitTemp);
-}
-
 function displayCelsiusTemp(event) {
   event.preventDefault();
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
@@ -119,9 +113,6 @@ let celsiusTemp = null;
 
 let currentCity = document.querySelector("#city-form");
 currentCity.addEventListener("submit", handleSubmit);
-
-let farenheit = document.querySelector("#farenheit");
-farenheit.addEventListener("click", displayFarenheitTemp);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", displayCelsiusTemp);
