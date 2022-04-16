@@ -59,6 +59,10 @@ a {
   font-size: 40px;
   font-weight: 500;
 }
+.weather-forecast {
+  text-align: center;
+  font-size: 13px;
+}
 .source-code {
   text-align: center;
 }
